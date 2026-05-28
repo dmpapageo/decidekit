@@ -2,7 +2,7 @@
 
 Rank hard choices with weighted criteria, option scoring, and a live summary.
 
-![DecideKit preview](./decidekit-preview.png)
+<img width="509" height="882" alt="image" src="https://github.com/user-attachments/assets/4eb315f2-bd5e-43c6-a179-8bd40784d8a9" />
 
 ## Features
 
