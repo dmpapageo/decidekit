@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DecideKit</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <section class="workspace" aria-label="Decision helper">
+        <header class="topbar">
+          <div>
+            <p class="eyebrow">DecideKit</p>
+            <h1>Rank hard choices without overthinking them.</h1>
+          </div>
+          <button class="ghost" id="resetButton" type="button" title="Reset scores">
+            Reset
+          </button>
+        </header>
+
+        <section class="decision-row">
+          <label for="decisionName">Decision</label>
+          <input
+            id="decisionName"
+            type="text"
+            value="Which project should I build this weekend?"
+            maxlength="90"
+          />
+        </section>
+
+        <div class="grid">
+          <section class="panel">
+            <div class="panel-heading">
+              <h2>Options</h2>
+              <button id="addOption" class="icon-button" type="button" title="Add option">
+                +
+              </button>
+            </div>
+            <div id="optionsList" class="stack"></div>
+          </section>
+
+          <section class="panel">
+            <div class="panel-heading">
+              <h2>Criteria</h2>
+              <button id="addCriterion" class="icon-button" type="button" title="Add criterion">
+                +
+              </button>
+            </div>
+            <div id="criteriaList" class="stack"></div>
+          </section>
+        </div>
+
+        <section class="panel results-panel">
+          <div class="panel-heading">
+            <div>
+              <h2>Ranking</h2>
+              <p id="winnerLine" class="subtle"></p>
+            </div>
+            <button id="copyButton" class="primary" type="button">Copy summary</button>
+          </div>
+          <div id="resultsList" class="results"></div>
+        </section>
+      </section>
+    </main>
+
+    <template id="optionTemplate">
+      <article class="option-card">
+        <div class="item-head">
+          <input class="option-name" type="text" maxlength="60" />
+          <button class="remove" type="button" title="Remove option">×</button>
+        </div>
+        <div class="score-list"></div>
+      </article>
+    </template>
+
+    <template id="criterionTemplate">
+      <article class="criterion-card">
+        <div class="item-head">
+          <input class="criterion-name" type="text" maxlength="44" />
+          <button class="remove" type="button" title="Remove criterion">×</button>
+        </div>
+        <label class="range-row">
+          <span>Weight</span>
+          <input class="criterion-weight" type="range" min="0" max="10" step="1" />
+          <strong class="weight-value"></strong>
+        </label>
+      </article>
+    </template>
+
+    <script src="app.js"></script>
+  </body>
+</html>
